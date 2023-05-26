@@ -1,0 +1,42 @@
+.Square{
+    border:3px solid red;
+    height:100px;
+    width:100px;
+    display: inline-block;
+    
+
+}
+.rectangle{
+    border:2px solid brown;
+    height: 100px;
+    width:200px;
+    display:inline-block;
+    float: right;
+
+}
+
+span{
+    padding :2px;
+    border:3px solid brown;
+    
+      
+}
+/* 1. descandant selector */
+div p{
+    color:blueviolet;
+}
+
+/* 2. child selector */
+div >p{
+    color:red;
+}
+
+/* 3. Adjacent sibling selector (only the next p of div not the 2nd one*/
+div + p{
+    color:aqua;
+}
+
+/* Gneral sibling selector applies for all p tags present out side the div tags */
+div ~ p{
+    color:chartreuse;
+}
