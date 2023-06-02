@@ -1,0 +1,134 @@
+1.Basic Structure of HTML
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+2. An element which is present inside <> this symbol is called an element. The element which is used to describe anything we want to diplay on the eab page.
+
+3. Attribute is which modifies the behaviour and change or giving the instruction to the tag.
+
+4. The block level element which take the space or size of the web page which it is written ex:<div>.
+   The inline levle elements will take the space according to it's size ex:<span>.
+   
+5. The div is an block element, it contains all the child elements inside it , and everytime when it is used it will goes to next line.
+   The span tag is inline element , it takes space according to it's size, it used as child tag inside the tag.
+  
+6.  <ol>
+		<li> Banglore</li>
+		<li>Manglore</li>
+		<li> Shivamoga</li>
+    </ol>
+	
+	<ul>
+		<li>Davangere</li>
+		<li>Hassan</li>
+		<li>Chikamagluru</li>
+	</ul>
+	
+	
+7. <table>
+		<tr>
+			<th>Student name</th>
+			<th>Address</th>
+			<th>Class</th>
+			<th>Roll no.</th>
+			<th>Percentage</th>
+		</tr>
+		
+		<tr>
+			<td>Mithra</td>
+			<td>Manglore</td>
+			<td>10th</td>
+			<td>102></td>
+			<td>65%</td>
+		</tr>
+		<tr>
+			<td>Anagha</td>
+			<td>Banglore</td>
+			<td>11th</td>
+			<td>120</td>
+			<td>78%</td>
+		</tr>
+		
+		<tr>
+			<td>Arun</td>
+			<td>Shivamoga</td>
+			<td>10th</td>
+			<td>130</td>
+			<td>98%</td>
+		</tr>
+		<tr>
+			<td>Ananya</td>
+			<td>Manglore</td>
+			<td>10th</td>
+			<td>104</td>
+			<td>78%</td>
+		</tr>
+   </table>
+   
+   
+   
+ 8.<form>
+	<div>
+    <label>Enter Name</label>
+	<input type="text" name="Name" placeholder="Enter Name">
+	</div>
+	
+		<div>
+    <label>Enter email</label>
+	<input type="email" name="email" placeholder="Enter email">
+	</div>
+	
+		<div>
+    <label>Enter password</label>
+	<input type="password" name="password" placeholder="Enter password">
+	</div>
+	
+	<label>Date of Birth</label>
+	<input type="Date" name="date" placeholder="Enter date of birth">
+	
+	<select class= "state">
+		<option>State</option>
+		<option>Karnataka</option>
+		<option>Maharashtra</option>
+		<option>TamilNadu</option>
+		<option>Kerala</option>
+	</select>
+		
+	<input type="radio" class="gender">Male
+	<input type="radio" class="gender">Female
+	<input type="radio" class="gender">Others
+		
+	<button type="Submit" value="Submit">Submit
+
+   </form>
+   
+ 9. <img src ="Image.jpg" alt="Note book">
+	<a href="https://facebook.com" target = "_blank"> Facebook</a>
+
+10. <audio src="link" >
+
+    <video src="relative link" >
+	
+	<a href="https://instagram.com">Instagram</a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
