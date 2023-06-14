@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            function register(){
+                console.log("calling register function")
+                
+
+                var firstName =document.getElementById("firstName")
+                console.log(firstName)
+                console.log(firstName.value)//to retrive the value
+                var enterName = document.getElementById("enterName")
+                enterName.innerHTML = ' '
+
+                if(firstName.value==''){
+                    console.log("Please Enter First Name")
+
+
+                //var enterName = document.getElementById("enterName")//document is object and get element from hmtl
+                enterName.innerHTML = "Please Enter First Name"
+                enterName.style.color = 'red'
+                return false
+                    
+                }  
+                var lastName = document.getElementById("lastName")
+                    console.log(lastName.value)
+                    var lastNameMessage = document.getElementById("lastNameMessage")
+                    lastNameMessage.innerHTML=' '
+                    if(lastName.value ==''){
+                        console.log("Please enter last name")
+                    lastNameMessage.innerHTML="Please enter last name"
+                    return false
+                    }
+              
+               
+                var email = document.getElementById("email")  
+                var emailMessage = document.getElementById("emailMessage")
+                    emailMessage.innerHTML = ' '             
+                if(email.value==''){
+                    console.log("Please Enter EmailId")
+                    emailMessage.innerHTML = "Please Enter EmailId"
+                    return false
+                }
+
+                var mobileNumber = document.getElementById("mobileNumber")
+                console.log(mobileNumber)
+                console.log(mobileNumber.value)
+                var numberMessage = document.getElementById("numberMessage")
+                numberMessage.innerHTML=''
+
+                if(mobileNumber.value==''){
+                    console.log("Please enter mobile number")              
+                    numberMessage.innerHTML="Please enter mobile number"
+                    return false
+                }
+
+                var address = document.getElementById("address")
+                console.log(address)
+                console.log(address.value)
+
+                var addressMessage = document.getElementById("addressMessage")
+                addressMessage.innerHTML =''
+                if(address.value==' '){
+                    console.log("Please enter your address")
+                    addressMessage.innerHTML="Please enter your address"
+                    return false
+                }
+
+
+                var password = document.getElementById("password")
+                var passwordMessage = document.getElementById("passwordMessage")
+                passwordMessage.innerHTML = ''
+
+                console.log ("password length check" + password.value.length)
+                var passwordMessage = document.getElementById("passwordMessage")
+                passwordMessage.innerHTML = ''
+
+                if(password.value ==''){
+                    console.log("Please Enter password")                  
+                    passwordMessage.innerHTML = "Please Enter Password"
+                    return false
+                }            
+                else if(password.value.length<6){
+                    console.log("Password is weak")
+                    passwordMessage.innerHTML = "Password is weak"
+                    return false
+                }
+
+                //document.formname.fieldName  --->(name)
+
+                console.log(document.registration.gender.checked)//called array
+                console.log(document.registration.gender[0])
+                console.log(document.registration.gender[1])
+                console.log(document.registration.gender[2])
+               if(document.registration.gender[0].checked== false && 
+               document.registration.gender[1].checked == false && 
+               document.registration.gender[2].checked ==false){
+                console.log("Please Select gender")
+                return false
+
+               }
+
+               console.log(document.registration.city)
+               console.log(document.registration.city.value)  
+               //if(document.registration.city.value)
+               var cityMessage = document.getElementById("cityMessage")
+               cityMessage.innerHTML=''
+               if(document.registration.city.value == "0"){
+                console.log("Please select city")
+               
+                cityMessage.innerHTML = "Please select city"
+                cityMessage.style.color = 'red'
+               }    
+               
+               console.log(firstName.value)
+               console.log(email.value)
+               console.log(password.value)
+               //for gender
+               var genderData
+               if(document.registration.gender[0].checked == true){
+                genderData = document.registration.gender[0].value
+               }else if(document.registration.gender[1].checked==true){
+                genderData=document.registration.gender[1].value
+               }else if(document.registration.gender[2].checked==true){
+                genderData=document.registration.gender[2].value
+               }
+               console.log(genderData)
+               console.log(document.registration.city.value)
+
+               //to create object
+               var registerData={
+                "firstName" : firstName.value,
+                "lastName" : lastName.value,
+                "email" : email.value,
+                "mobileNumber" : mobileNumber.value,
+                "address" : address.value,
+                "password" : password.value,
+                "gender" : genderData,
+                "city" : document.registration.city.value
+               }
+               console.log(registerData)
+               console.log(typeof(registerData))
+               //To convert object to String
+               var registerDataString = JSON.stringify(registerData)
+               console.log(typeof(registerDataString))
+               console.log(registerDataString)
+               localStorage.setItem("Nokey", registerDataString )
+            }
+
+        </script>
+    </head>
+    <body>
+        <form name="registration">
+            <div>
+            <label>Enter First Name</label>
+            <input type="text" name="firstName" id="firstName" required>
+            <span id="enterName"></span>
+            </div>
+
+            <div>
+                <label>Enter Last Name</label>
+                <input type="text" name="lastName" id="lastName" >
+                <span id="lastNameMessage"></span>
+            </div>
+
+            <div>
+                <label>Enter EmailId</label>
+                <input type ="email" name="email" id="email">
+                <span id="emailMessage"></span>
+            </div>
+
+            <div>
+                <label>Enter mobile number</label>
+                <input type="tel" name="mobileNumber" id="mobileNumber">
+                <span id="numberMessage"></span>
+            </div>
+
+            <div>
+                <label>Enter your address</label>
+                <textarea cols="2" rows="4" id="address"> </textarea>
+                <span id="addressMessage"></span>
+            </div>
+
+            <div>
+                <label>Enter Passsword</label>
+                <input type="password" name="password" id="password">
+                <span id="passwordMessage"></span>
+            </div>
+
+            <div id>
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female 
+                <input type="radio" name="gender" value="others">Others
+                <span id = "genderMessage"></span>
+            </div>
+
+            <div>
+                <label>Select Ctiy</label>
+                <Select name="city"> 
+                    <option value ="0">--Select city</option> 
+                    <option value="hassan">Hassan</option>
+                    <option value="banglore">Banglore</option>
+                    <option value="manglore"> Manglore</option>
+                    <option>Kodagu</option>
+                    <option>Udupi</option>
+                </Select>
+                <span id="cityMessage"></span>
+            </div>
+
+               <button type="button" onclick="register()">Register</button>
+
+            <!--Address, mobileNumber-->
+       </form>
+       <div>
+        Already registered, click to <a href="login.html">login</a>
+       </div>
+    </body>
+</html>
+<!-- Storage - to store data
+     In browser 5MB of data can be stored
+    local storage=permanent storage
+    , session storage -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
