@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript</title>
+        <script>
+            //console.log()
+            //System.out.println() println is the method - out is static - System is class
+            console.log("We are learning JavaScript")
+
+            //how to write variable in js 
+            //datatype variablename;
+            //var variablename;
+
+            var javascript = 'java';
+            console.log(javascript)
+            javascript ='javascript';
+            console.log(javascript)
+            console.log(typeof(javascript)) // type of is used for to see the data type of value
+
+            var b = 10;
+            console.log(b)
+            console.log(typeof(b)) //for integer or decimals(like int float double and all here the data type is number in JS)
+
+            b='java'
+            console.log(b)
+            console.log(typeof(b))
+
+            var a = 3.90909;
+            console.log(a)
+            console.log(typeof(a))
+
+            var d = 'a'
+            console.log(typeof(d))
+
+            // Data types in JS 
+            //string, number, boolean, undefined
+
+            function display(){
+                console.log("calling display function")
+            }
+            display()
+
+            function add(x,y){
+                console.log("Calling parameterized function")
+                console.log(x)
+                console.log(y)
+                return x+y
+            }
+            console.log(add(10,20))
+
+            function sub(a,b){
+                // console.log(a)
+                // console.log(b)
+                return a-b
+            }
+            console.log(sub(100,50))
+
+            function clickMe(){
+                console.log("User clicked the button")
+                var clickMessage = document.getElementById("clickMessage")
+                clickMessage.innerHTML ="User clicked the button"
+             //   clickMessage.style.color = 'green'
+
+                var clickColor = document.getElementById("clickColor")
+                clickColor.style.color='white'
+                clickColor.style.backgroundColor='red'
+            }
+
+            function Submit(){
+                console.log("Clicked the sumbit button")
+            }
+
+            function mouseOver(){
+                console.log("User mouseover button")
+            }
+            
+
+
+
+            // let x = 45;
+            // console.log(x)
+
+        //    const x = "Harry"
+        //     console.log(x)
+
+        //     const y = "Harry"
+        //     console.log(y)
+
+
+            // sysntax of JS
+            // print statement
+            // declare variable
+            // how to initialize value for variable
+            // function to get  datatype of variable 
+            // data types in javascript
+
+            // how to declare function
+            // argumented function
+            // how to call function
+            // Events
+            // Event Handling
+            // How to send data from html to javascript
+            // How to send data from javascriptto html
+
+            function addition(){
+                console.log("Taking value from html page")
+
+                // form value
+               var num1 = document.getElementById("num1")
+               console.log(num1)
+               console.log(num1.value)
+
+              var num2 = document.getElementById("num2")
+              console.log(num2)
+              console.log(num2.value)
+              //console.log(num1.vlaue + num2.value)
+
+              var result = parseInt(num1.value) + parseInt(num2.value)
+              console.log(result)
+
+              var addition =document.getElementById("addition")
+              console.log(addition)
+              addition.innerHTML = 'Result is = ' + result;
+            }
+
+            function substraction(){
+                console.log("----Substraction----")
+
+              var val1 = document.getElementById("num1")
+              console.log (num1)
+              console.log(num1.value)
+              var val2 = document.getElementById("num2")
+              console.log(num2)
+              console.log(num2.value)
+
+              var rel = parseInt(num1.value) - parseInt(num2.value)
+              console.log(rel)
+
+              var substraction = document.getElementById("substraction")
+              console.log(substraction)
+              substraction.innerHTML = 'Result of substraction = '+ rel
+            }
+
+              function multiply(){
+
+                console.log("Multiplying")
+              
+              var num1 = document.getElementById("num1")
+              console.log(num1)
+              console.log(num1.value)
+              var num2 = document.getElementById("num2")
+              console.log(num2)
+              console.log(num2.value)
+
+              var res = parseInt(num1.value) * parseInt(num2.value)
+              console.log(res)
+
+              var multiply = document.getElementById("multiply")
+              console.log(multiply)
+              multiply.innerHTML='Result multiplication' + res
+            }
+
+            function division(){
+                console.log("Dividing")
+
+                var num1 = document.getElementById("num1")
+                console.log(num1);
+                console.log(num1.value)
+
+                var num2 = document.getElementById("num2")
+                console.log(num2)
+                console.log(num2.value)
+                var rel = parseInt(num1.value)/parseInt(num2.value)
+                console.log(rel)
+            }
+            
+        </script>
+    </head>
+    <body>
+        <button onclick="clickMe()" id="clickColor">click Me</button> <!--clickon is a attribute-->
+        <span id = "clickMessage"></span>
+        <br>
+        <button onclick ="Submit()">Submit</button>
+
+        <button onmouseover="mouseOver()">Mouse Over</button>
+
+        
+        
+        <form>
+            <div>
+            <label>Enter Number1</label>
+            <input type="text" name="num1" id="num1">
+            <div>
+
+            <div>
+                <label>Enter Number 2</label>
+                <input type="text" name="num2" id="num2">
+            </div>
+            <button type="button" onclick="addition()">Submit</button>            
+        </form>
+
+        <!-- <form>
+            <div>
+                <label>Enter number1</label>
+                <input type="number" name="val1" id ="val1">
+            </div>
+            <div>
+                <label>Enter number2</label>
+                <input type="number" name="val2" id="val2">
+            </div>
+        </form> -->
+
+            <div><button type="button" onclick="substraction()">Sub</button>
+            <span id="substraction"></span>
+            </div>
+
+            <div>
+            <button type="button" onclick="multiply()">Multiply</button>
+            <span id ="multiply"></span>
+            </div>
+
+            <div>
+            <button type="button" onclick="division()">Division </button><!--we use button in type instead of submmit becoz the function cannot accessed-->
+            <span id="division"></span>
+            </div>
+
+            <span  id ="addition"></span>
+       
+    </body>
+</html>
+<!-- Storage - to store data
+     In browser 5MB of data can be stored
+    local storage, session storage -->
+
+    <!--Interview
+    //var, let, constant
+    //How to navigate to another page in javascript
+    // == and ===  -->
